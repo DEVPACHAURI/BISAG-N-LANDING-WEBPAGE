@@ -1,4 +1,3 @@
-// Service areas. `big` makes a card span two columns on wide screens.
 export const SERVICES = [
   { icon: 'satellite', title: 'Satellite Communication', text: 'Satellite broadcasting for distant interactive training, education and extension.', big: true },
   { icon: 'layers', title: 'Remote Sensing Applications', text: 'Inventory mapping, development planning and monitoring of natural and man-made resources.' },

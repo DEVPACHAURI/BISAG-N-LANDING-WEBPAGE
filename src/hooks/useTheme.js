@@ -7,6 +7,10 @@ function getInitialTheme() {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved === 'light' || saved === 'dark') return saved;
   } catch (e) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> fe4e978b8cc141b4649827c1f71dc73a39234b46
   }
   return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 }
@@ -14,7 +18,6 @@ function getInitialTheme() {
 export default function useTheme() {
   const [theme, setTheme] = useState(getInitialTheme);
 
-  // Layout effect runs before paint, so the page never flashes the wrong theme.
   useLayoutEffect(() => {
     document.documentElement.dataset.theme = theme;
   }, [theme]);
@@ -25,7 +28,6 @@ export default function useTheme() {
     try {
       localStorage.setItem(STORAGE_KEY, next);
     } catch (e) {
-      // Ignore: the choice still applies for this visit.
     }
   }, [theme]);
 

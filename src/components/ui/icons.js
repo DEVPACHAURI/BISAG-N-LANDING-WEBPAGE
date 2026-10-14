@@ -1,4 +1,4 @@
-// SVG path data for the 24x24 line icons used across the site.
+
 export const ICONS = {
   satellite: 'M13 7 9 3 5 7l4 4M17 11l4 4-4 4-4-4M8 12l4 4M16 8l3-3M9 21a6 6 0 0 0-6-6',
   layers: 'M12 2 2 7l10 5 10-5-10-5ZM2 17l10 5 10-5M2 12l10 5 10-5',
