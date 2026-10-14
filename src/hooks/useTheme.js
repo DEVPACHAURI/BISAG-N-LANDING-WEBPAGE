@@ -7,10 +7,6 @@ function getInitialTheme() {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved === 'light' || saved === 'dark') return saved;
   } catch (e) {
-<<<<<<< HEAD
-=======
-    
->>>>>>> fe4e978b8cc141b4649827c1f71dc73a39234b46
   }
   return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 }
