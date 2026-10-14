@@ -7,12 +7,10 @@ function getInitialTheme() {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved === 'light' || saved === 'dark') return saved;
   } catch (e) {
-    // Storage can be blocked (private mode, strict settings). Use the system setting instead.
   }
   return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 }
 
-/** Returns [theme, toggleTheme] and keeps <html data-theme> in sync. */
 export default function useTheme() {
   const [theme, setTheme] = useState(getInitialTheme);
 

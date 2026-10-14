@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 
-/** True once the page has scrolled more than `threshold` pixels. */
 export default function useScrolled(threshold = 24) {
   const [scrolled, setScrolled] = useState(false);
 

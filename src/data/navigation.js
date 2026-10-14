@@ -1,4 +1,3 @@
-// Top-level menu. `children` renders as a dropdown on desktop and an accordion on mobile.
 export const NAV = [
   { label: 'Home', href: '#home' },
   {
