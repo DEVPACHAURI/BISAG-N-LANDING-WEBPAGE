@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  --bg: #f0ede8;
+  --surface: #ffffff;
+  --surface-2: #e8e4de;
+  --text: #1e2a2d;
+  --muted: #607275;
+  --line: rgba(30, 42, 45, 0.13);
+  --accent: #1a6b5e;
+  --accent-soft: #d6ebe6;
+  --accent-ink: #ffffff;
+  --highlight: #c47f1a;
+  --ink: #152527;
+  --ink-deep: #0d1a1c;
+  --on-ink: #e8f0ef;
+  --on-ink-soft: #abbcba;
+  /* this teal is used for the globe + active indicators */
+  --ink-accent: #6dd4ca;
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1415;
+    --surface: #171e20;
+    --surface-2: #1c2326;
+    --text: #e2ecea;
+    --muted: #8fa0a2;
+    --line: rgba(226, 236, 234, 0.1);
+    --accent: #4dbfb4;
+    --accent-soft: rgba(77, 191, 180, 0.13);
+    --accent-ink: #062019;
+    --highlight: #d4a030;
+    color-scheme: dark;
+  }
+}
+
+
+:root[data-theme="dark"] {
+  --bg: #0f1415;
+  --surface: #171e20;
+  --surface-2: #1c2326;
+  --text: #e2ecea;
+  --muted: #8fa0a2;
+  --line: rgba(226, 236, 234, 0.1);
+  --accent: #4dbfb4;
+  --accent-soft: rgba(77, 191, 180, 0.13);
+  --accent-ink: #062019;
+  --highlight: #d4a030;
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Source Sans 3', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Source Serif 4', Georgia, serif;
+  letter-spacing: -0.01em;
+}
+
+:focus-visible {
+  outline: 3px solid var(--highlight);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+.fade-up {
+  animation: rise 0.6s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
